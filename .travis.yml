@@ -2,18 +2,18 @@ language: node_js
 node_js:
 - '6'
 before_deploy:
-  - echo 'before-deploy:'
-  - npm run build
-  - echo src
-  - ls -lR src
-  - echo dist
-  - ls -lR dist
+- echo 'before-deploy:'
+- npm run build
+- echo src
+- ls -lR src
+- echo dist
+- ls -lR dist
 deploy:
   provider: npm
   email: anthony.kerz@gmail.com
   api_key:
-    secure: Q60K360gnh5R8r0sgqFQ2cIcB/B8u/n0l6Wlr6PTzn3T9E9ePHtrmrC8uhWXVa/BfRUcm9sEyNNTplyejIrHNbCQ1g+79w81pWmOec31XNXVYK1hNQf+golcYiD4LBfD93L/sdvW6wYKjMPvTHSNw9pjwaH1IoKCp/9waLzpv3aHjTFwYbZT1CxIAjDFGTh1rlPmXYlNlO+UtnD8pRZVz/PDhyinsz4I2hgb7p4HxAklPHbzCUTcKHec1L+naK3rzYF8/umsO3I/McZilgI+8A1t3nV+OmONdXUgy5NUerwvIi1/+7qorr8Q0SMdW3slcrmFQ0fEX/Lt5qoMJ0LCUNRE3DEowdlN2JXPYipB4ZSVTvPfER3hxkNkYBlJlsoahJKvceTyndkTEG0rti4Uiq6sFsjshJ4QaTEDTNJOAt5vaph/owiPh58TaKQFWwq1E5MzQ29aSG75tr/Z5GJsFVY5QI6dP4ePFnU8uEDqnO378VSU0VKsOe1/ezmvV52vriMKUaQHVH+DynmFJkGZ8tR02QAcxoM8Y4HxaCzEUJ3iRtQvr32lnmosV6HqtR4SdV6MigRoEXhGEthF4rfI5gPqbk0rNT1FGICvhHyDiTrnkY+YmNt+/FhMaMbnsz0WPKZJOrPeuPRre69PlL4tXWylRfVWGEldIKDNoUnVAxo=
+    secure: TxtGxT+Ihvne2MTrGHqVtSEgCDHZQRNyGYOxu6HqSLJn+OJVTiFrSb5teoXLRqRmFs7YlaYWpuiUSEd+I3c2x23kR4TuQNR8V5ur64LjBUAC2t3HKvHXAxuYJom9zOA6x6db2s3pPbM/t2geRwWf0xF3GZV82Ll4QsvxUYU/Eccb1Cl4ZKJGcdT0hdZt7jM2E0I4QxsnJlsf31TnDEe+9fXl2r0xZTM/jrC3uGMCxVWPvIuCKoDBe0vVyOyPwI1769ds92pxUrEMRlUrkzxMvtk83zmjB6Mkp2V0YZyaZwfgH7QGJ+GS6TN55pbdCl6cCHzr0gq3ZYiQTEveIuh7MFIcI3kqvNt0dQnpM+puQEWSb14yJlIskjt+mLIw08YlI+6fpslPSA4Lt5hHgnckj+jghkypZOG1FTdEna66v42Y9644zwsPzd3NURTbuf5U2Bib727eQSBAfQ4UMpdVJeZpDgZe7YhNchZPd6pSQhoUYgQW1Yz6FKmj+u7yRVBkBggo4NlF1xZlN0dahd0B8srIuzQaWDVHDP993gponZlmEaKiK0hyRgtuVlLGkVyK+TXoqvbV857olmjTQMCe9jWWA3HZ8ZxunsyATPNRSQ5uArOpVLGfK8mcS6U9dJCsvBNTS9qV2rL10Xz8M0cKCYE6vUAcXfp1ZPizKl6krhc=
   skip_cleanup: true
   on:
     branch: master
-    condition: ! -z $TRAVIS_TAG
+    condition: "-z $TRAVIS_TAG"
