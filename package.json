@@ -1,6 +1,6 @@
 {
   "name": "tymer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple event timer",
   "main": "dist/index.js",
   "repository": {
@@ -16,7 +16,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.13.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {

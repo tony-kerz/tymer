@@ -28,3 +28,12 @@ test('should record', t => {
   t.is(timer.avg(), 2000)
   t.is(timer.total(), 4000)
 })
+
+test('should record with parent', t => {
+  const timer = new Timer('some-event')
+  for (let i = 0; i < 10; i++) {
+    const child = new Timer()
+    timer.record(child.stop())
+  }
+  t.is(timer.count(), 10)
+})

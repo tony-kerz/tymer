@@ -1,7 +1,7 @@
 import _ from 'lodash'
 //import debug from 'debug'
 
-//const dbg = debug('app:timer')
+//const dbg = debug('app:tymer')
 
 export default class {
   constructor(name) {
@@ -69,6 +69,9 @@ export default class {
     return `${this._name}: count=${this._count}, min=${format(this._min)}, max=${format(this._max)}, last=${format(this._last)}, avg=${format(this.avg())}, total=${format(this._total/1000)}s`
   }
 
+  isThresh(thresh) {
+    return (this._count % thresh) === 0
+  }
 }
 
 function format(n) {
