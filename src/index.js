@@ -8,6 +8,8 @@ export default class {
     this._name = name
     this._count = 0
     this._total = 0
+    this._max = 0
+    this._max2 = 0
     this.start()
   }
 
@@ -22,13 +24,20 @@ export default class {
   record(millis) {
     this._count++
     this._last = millis
+
     if (_.isUndefined(this._min) || this._last < this._min) {
       this._min = this._last
     }
-    if (_.isUndefined(this._max) || this._last > this._max) {
-      this._max2 = this._max || this._last
-      this._max = this._last
+
+    if (this._last > this._max2) {
+      if (this._last < this._max) {
+        this._max2 = this._last
+      }
+      if (this._last > this._max) {
+        this._max = this._last
+      }
     }
+
     this._total += this._last
     return millis
   }
@@ -55,7 +64,7 @@ export default class {
   }
 
   avg2() {
-    return (this._total - this._max) / (this._count - 1)
+    return this._count ? (this._total - this._max) / (this._count - 1) : NaN
   }
 
   count() {
