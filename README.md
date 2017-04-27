@@ -65,5 +65,8 @@ something().then(()=>{
 console.log('timer: report=%o', timer.toString())
 ```
 ```
-some-event: count=1, min=0.014, max=0.048, last=0.015, avg=0.026, total=0.000s
+some-event: count=1, min=0.014, max=0.048, max2=0.031, last=0.015, avg=0.026, avg2=0.021, total=0.000s
 ```
+> `max2` is the second max, and `avg2` is the average without the max.
+
+> this is to provide insight into loops where the first call incurs an initialization cost.

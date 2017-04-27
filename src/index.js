@@ -26,6 +26,7 @@ export default class {
       this._min = this._last
     }
     if (_.isUndefined(this._max) || this._last > this._max) {
+      this._max2 = this._max || this._last
       this._max = this._last
     }
     this._total += this._last
@@ -45,8 +46,16 @@ export default class {
     return this._max
   }
 
+  max2() {
+    return this._max2
+  }
+
   avg() {
     return this._total / this._count
+  }
+
+  avg2() {
+    return (this._total - this._max) / (this._count - 1)
   }
 
   count() {
@@ -66,7 +75,7 @@ export default class {
   }
 
   toString() {
-    return `${this._name}: count=${this._count}, min=${format(this._min)}, max=${format(this._max)}, last=${format(this._last)}, avg=${format(this.avg())}, total=${format(this._total/1000)}s`
+    return `${this._name}: count=${this._count}, min=${format(this._min)}, max=${format(this._max)}, max2=${format(this._max)}, last=${format(this._last)}, avg=${format(this.avg())}, avg2=${format(this.avg2())}, total=${format(this._total/1000)}s`
   }
 
   isThresh(thresh) {
