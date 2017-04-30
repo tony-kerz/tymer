@@ -1,6 +1,6 @@
 {
   "name": "tymer",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "simple event timer",
   "main": "dist/index.js",
   "repository": {
