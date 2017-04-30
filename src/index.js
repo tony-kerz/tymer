@@ -84,7 +84,7 @@ export default class {
   }
 
   toString() {
-    return `${this._name}: count=${this._count}, min=${format(this._min)}, max=${format(this._max)}, max2=${format(this._max)}, last=${format(this._last)}, avg=${format(this.avg())}, avg2=${format(this.avg2())}, total=${format(this._total/1000)}s`
+    return `${this._name}: count=${this._count}, min=${format(this._min)}, max=${format(this._max)}, max2=${format(this._max2)}, last=${format(this._last)}, avg=${format(this.avg())}, avg2=${format(this.avg2())}, total=${format(this._total/1000)}s`
   }
 
   isThresh(thresh) {
