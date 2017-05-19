@@ -90,6 +90,20 @@ export default class {
   isThresh(thresh) {
     return (this._count % thresh) === 0
   }
+
+  metrics() {
+    return {
+      name: this.name(),
+      count: this.count(),
+      min: this.min(),
+      max: this.max(),
+      max2: this.max2(),
+      last: this.last(),
+      avg: this.avg(),
+      avg2: this.avg2(),
+      total: this.total()
+    }
+  }
 }
 
 function format(n) {
