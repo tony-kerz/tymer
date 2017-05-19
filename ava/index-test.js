@@ -64,7 +64,6 @@ test('timer: three', t => {
   t.is(timer.avg2(), 3000)
   t.is(timer.total(), 12000)
   t.is(timer.metrics().count, 3)
-  console.log(timer.metrics())
 })
 
 test('timer: should record with parent', t => {
